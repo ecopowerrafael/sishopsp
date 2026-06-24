@@ -1,0 +1,6 @@
+{
+  "name": "Portal Sishosp",
+  "description": "Portal e simulador moderno do Sishosp, o sistema líder para gestão de clínicas de reabilitação, APAEs, clínicas de autismo e centros de reabilitação. Inclui calculadoras de ROI e comparativos de produtividade.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
