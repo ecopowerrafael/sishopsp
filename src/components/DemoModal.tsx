@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Calendar, CheckCircle, ArrowRight, ShieldCheck, Download, Sparkles, Building, Phone, Mail, Users, User, Award } from 'lucide-react';
 import { LeadFormData } from '../types';
@@ -11,43 +11,91 @@ interface DemoModalProps {
 
 export default function DemoModal({ isOpen, onClose, initialChallenge = '' }: DemoModalProps) {
   const [step, setStep] = useState(1);
+  const cleanInitialChallenge = typeof initialChallenge === 'string' ? initialChallenge : '';
   const [formData, setFormData] = useState<LeadFormData>({
     name: '',
-    email: '',
-    phone: '',
     clinicName: '',
     role: '',
     professionalsCount: 10,
-    mainChallenge: initialChallenge,
-    acceptsTerms: true
+    mainChallenge: cleanInitialChallenge || 'glosas'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Reset step and challenge when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setStep(1);
+      const challengeStr = typeof initialChallenge === 'string' ? initialChallenge : '';
+      setFormData(prev => ({
+        ...prev,
+        mainChallenge: challengeStr || prev.mainChallenge || 'glosas'
+      }));
+    }
+  }, [isOpen, initialChallenge]);
+
+  const handleWhatsAppRedirect = (data = formData) => {
+    const phone = '5519999478017';
+    
+    const rolesMap: Record<string, string> = {
+      diretor: 'Diretor / Presidente',
+      administrador: 'Administrador / Gerente',
+      coordenador: 'Coordenador Clínico',
+      faturista: 'Faturista / Faturamento',
+      terapeuta: 'Terapeuta / Profissional de Saúde',
+      outro: 'Outro'
+    };
+    
+    const challengesMap: Record<string, string> = {
+      glosas: 'Reduzir Glosas e Erros de Faturamento (BPA-I/APAC/XML)',
+      agendas: 'Organizar Agendas Multiprofissionais e de Grupos',
+      aba: 'Prontuário de Reabilitação e Metas de Evolução (ABA/TEA)',
+      fila: 'Gerenciar Fila de Espera de Pacientes (SUS/Vagas)',
+      presenca: 'Controle de Frequência dos Pacientes e Assinaturas',
+      outro: 'Outros Desafios Administrativos'
+    };
+
+    const roleText = rolesMap[data.role] || data.role;
+    const challengeText = challengesMap[data.mainChallenge] || data.mainChallenge;
+
+    const text = `Olá! Gostaria de agendar uma demonstração do SisHOSP.
+
+Seguem meus dados:
+- *Nome*: ${data.name}
+- *Nome da Clínica*: ${data.clinicName}
+- *Cargo*: ${roleText}
+- *Principal Desafio*: ${challengeText}
+- *Profissionais Ativos*: ${data.professionalsCount}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedText}`;
+    
+    try {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    } catch (e) {
+      console.error("Failed to open WhatsApp redirect:", e);
+      // Fallback: update location if top window is allowed or just log
+      try {
+        window.location.href = whatsappUrl;
+      } catch (err) {
+        console.error("Failed to fallback redirect:", err);
+      }
+    }
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API registration to Portal Sishosp
+    handleWhatsAppRedirect();
+    
     setTimeout(() => {
       setIsSubmitting(false);
-      setStep(3); // Success step
-    }, 1500);
+      setStep(2); // Step 2 is success/redirection
+    }, 800);
   };
 
   const updateField = (field: keyof LeadFormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleNextStep = () => {
-    if (step === 1 && formData.name && formData.email && formData.phone) {
-      setStep(2);
-    }
-  };
-
-  const handlePrevStep = () => {
-    if (step === 2) {
-      setStep(1);
-    }
   };
 
   return (
@@ -80,7 +128,7 @@ export default function DemoModal({ isOpen, onClose, initialChallenge = '' }: De
               <div>
                 <div className="flex items-center gap-2 mb-6">
                   <span className="bg-teal-500 text-teal-950 px-2.5 py-1 rounded-md text-xs font-bold tracking-wider uppercase font-display">
-                    Sishosp Portal
+                    SisHOSP Portal
                   </span>
                   <span className="text-teal-300 text-xs font-medium">• Software Oficial</span>
                 </div>
@@ -143,30 +191,14 @@ export default function DemoModal({ isOpen, onClose, initialChallenge = '' }: De
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Progress Bar */}
-              {step < 3 && (
-                <div className="mb-6">
-                  <div className="flex justify-between text-xs text-slate-500 font-medium mb-1.5">
-                    <span>Etapa {step} de 2: {step === 1 ? 'Dados de Contato' : 'Sua Clínica'}</span>
-                    <span>{step === 1 ? '50%' : '100%'} Concluído</span>
-                  </div>
-                  <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-teal-500 transition-all duration-300"
-                      style={{ width: step === 1 ? '50%' : '100%' }}
-                    />
-                  </div>
-                </div>
-              )}
-
               {/* Form Step 1 */}
               {step === 1 && (
-                <div className="flex-1 flex flex-col justify-center">
+                <form onSubmit={handleSubmit} className="flex-1 flex flex-col justify-center">
                   <h4 className="text-xl font-display font-bold text-slate-900 mb-1">
                     Agende sua Consultoria Diagnóstica
                   </h4>
                   <p className="text-sm text-slate-500 mb-6">
-                    Insira seus dados para que um especialista de reabilitação entre em contato.
+                    Insira seus dados para iniciar o contato direto com um especialista de reabilitação no WhatsApp.
                   </p>
 
                   <div className="space-y-4">
@@ -187,66 +219,6 @@ export default function DemoModal({ isOpen, onClose, initialChallenge = '' }: De
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        E-mail de Trabalho
-                      </label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                        <input
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => updateField('email', e.target.value)}
-                          placeholder="Ex: roberto@clinicax.com.br"
-                          className="w-full pl-10 pr-4 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        WhatsApp / Telefone
-                      </label>
-                      <div className="relative">
-                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                        <input
-                          type="tel"
-                          required
-                          value={formData.phone}
-                          onChange={(e) => updateField('phone', e.target.value)}
-                          placeholder="Ex: (11) 99999-9999"
-                          className="w-full pl-10 pr-4 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 pt-4 border-t border-slate-100 flex justify-end">
-                    <button
-                      type="button"
-                      onClick={handleNextStep}
-                      disabled={!formData.name || !formData.email || !formData.phone}
-                      className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-all shadow-sm hover:shadow"
-                    >
-                      Continuar
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* Form Step 2 */}
-              {step === 2 && (
-                <form onSubmit={handleSubmit} className="flex-1 flex flex-col justify-center">
-                  <h4 className="text-xl font-display font-bold text-slate-900 mb-1">
-                    Conte-nos sobre sua Clínica
-                  </h4>
-                  <p className="text-sm text-slate-500 mb-6">
-                    Ajudará o consultor a preparar telas e simulações do Sishosp com o seu perfil.
-                  </p>
-
-                  <div className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
@@ -325,32 +297,12 @@ export default function DemoModal({ isOpen, onClose, initialChallenge = '' }: De
                         <span>100+ profissionais</span>
                       </div>
                     </div>
-
-                    <div className="flex items-start gap-2.5 mt-2">
-                      <input
-                        type="checkbox"
-                        id="accepts-terms"
-                        checked={formData.acceptsTerms}
-                        onChange={(e) => updateField('acceptsTerms', e.target.checked)}
-                        className="mt-1 accent-teal-600 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
-                      />
-                      <label htmlFor="accepts-terms" className="text-xs text-slate-500 leading-normal">
-                        Concordo em receber comunicações e materiais educativos do Sishosp Portal. Você pode cancelar a inscrição a qualquer momento.
-                      </label>
-                    </div>
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-slate-100 flex justify-between items-center">
-                    <button
-                      type="button"
-                      onClick={handlePrevStep}
-                      className="text-slate-500 hover:text-slate-700 text-sm font-semibold hover:bg-slate-50 px-4 py-2 rounded-lg transition-all"
-                    >
-                      Voltar
-                    </button>
+                  <div className="mt-8 pt-4 border-t border-slate-100 flex justify-end">
                     <button
                       type="submit"
-                      disabled={isSubmitting || !formData.clinicName || !formData.role || !formData.mainChallenge || !formData.acceptsTerms}
+                      disabled={isSubmitting || !formData.name || !formData.clinicName || !formData.role || !formData.mainChallenge}
                       className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all shadow-md hover:shadow-lg"
                       id="submit-demo-button"
                     >
@@ -360,7 +312,7 @@ export default function DemoModal({ isOpen, onClose, initialChallenge = '' }: De
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                           </svg>
-                          Processando...
+                          Redirecionando...
                         </>
                       ) : (
                         <>
@@ -373,50 +325,36 @@ export default function DemoModal({ isOpen, onClose, initialChallenge = '' }: De
                 </form>
               )}
 
-              {/* Step 3: Success Screen */}
-              {step === 3 && (
+              {/* Step 2: Success Screen */}
+              {step === 2 && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex-1 flex flex-col items-center justify-center text-center p-6"
                 >
                   <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center text-teal-600 mb-6 border border-teal-100">
-                    <Calendar className="w-8 h-8" />
+                    <CheckCircle className="w-8 h-8" />
                   </div>
 
                   <h4 className="text-2xl font-display font-bold text-slate-900 mb-2">
-                    Solicitação Recebida com Sucesso!
+                    Redirecionando para o WhatsApp...
                   </h4>
                   
-                  <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
-                    Olá <strong className="text-slate-900">{formData.name}</strong>, nosso consultor especializado em <strong className="text-slate-900">reabilitação e faturamento</strong> entrará em contato em menos de <strong className="text-teal-600">2 horas úteis</strong> pelo WhatsApp no número <span className="font-semibold text-slate-800">{formData.phone}</span>.
+                  <p className="text-slate-600 text-sm max-w-md mx-auto mb-6 leading-relaxed">
+                    Olá <strong className="text-slate-900">{formData.name}</strong>, estamos abrindo a conversa com nosso consultor especializado em seu WhatsApp para agendar sua demonstração.
+                    <br />
+                    Caso o redirecionamento automático não tenha funcionado, clique no botão abaixo para iniciar a conversa:
                   </p>
 
-                  <div className="w-full bg-slate-50 border border-slate-100 rounded-xl p-5 mb-8 text-left max-w-lg mx-auto">
-                    <div className="flex items-center gap-2.5 mb-2.5">
-                      <span className="p-1 bg-amber-100 text-amber-700 rounded text-[10px] font-bold uppercase font-display">
-                        Bônus de Autoridade
-                      </span>
-                      <span className="text-xs font-semibold text-slate-700">Material Gratuito Liberado</span>
-                    </div>
-                    <h5 className="text-sm font-bold text-slate-900 mb-1">
-                      Manual de Faturamento e Auditoria SUS & Convênios para Clínicas de Reabilitação
-                    </h5>
-                    <p className="text-xs text-slate-500 mb-4">
-                      Evite glosas de APACs e guias de SADT hoje mesmo com o nosso guia prático.
-                    </p>
-                    <a
-                      href="#download-manual"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        alert('Seu download do "Manual de Faturamento Sishosp" foi iniciado com sucesso!');
-                      }}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 px-4 py-2.5 rounded-lg transition-all"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      Baixar Manual PDF Grátis
-                    </a>
-                  </div>
+                  <button
+                    onClick={() => handleWhatsAppRedirect()}
+                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-bold text-sm transition-all shadow-md hover:shadow-lg mb-8"
+                  >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.83.001-2.624-1.023-5.091-2.884-6.955C16.59 1.966 14.135.941 11.999.941c-5.444 0-9.867 4.413-9.87 9.83-.001 1.956.513 3.864 1.492 5.56l-.982 3.585 3.693-.969zm13.111-8.595c-.302-.15-.178-.25-.3-.45-.125-.2-.164-.34-.234-.48-.07-.14-.265-.14-.565-.29-.3-.15-1.78-.875-2.056-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.462.13-.611.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.589-.493-.51-.675-.519-.175-.009-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.22 5.11 4.52.714.31 1.272.495 1.705.63.717.228 1.369.196 1.885.119.575-.085 1.78-.725 2.03-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z" />
+                    </svg>
+                    Falar com Consultor no WhatsApp
+                  </button>
 
                   <button
                     onClick={onClose}

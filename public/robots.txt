@@ -1,0 +1,12 @@
+# Robots.txt for SisHOSP Portal (SEO Optimized)
+User-agent: *
+Allow: /
+
+# Block search on system query parameters to prevent duplicate pages
+Disallow: /*?*
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Define XML sitemaps location
+Sitemap: https://portal.sishosp.com.br/sitemap.xml

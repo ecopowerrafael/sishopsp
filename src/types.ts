@@ -29,11 +29,11 @@ export interface SolutionSector {
 
 export interface LeadFormData {
   name: string;
-  email: string;
-  phone: string;
+  email?: string;
+  phone?: string;
   clinicName: string;
   role: string;
   professionalsCount: number;
   mainChallenge: string;
-  acceptsTerms: boolean;
+  acceptsTerms?: boolean;
 }

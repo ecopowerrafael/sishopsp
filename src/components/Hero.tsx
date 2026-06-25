@@ -49,7 +49,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8 max-w-xl"
             >
-              O <strong>Sishosp</strong> é a solução definitiva em software de saúde para clínicas multiprofissionais de reabilitação, centros de Autismo (método ABA), APAEs e convênios. Centralize agendas, prontuários, faturamento SUS (BPA-I, APAC) e reduza faltas.
+              O <strong>SisHOSP</strong> é a solução definitiva em software de saúde para clínicas multiprofissionais de reabilitação, centros de Autismo (método ABA), APAEs e convênios. Centralize agendas, prontuários, faturamento SUS (BPA-I, APAC) e reduza faltas.
             </motion.p>
 
             {/* Bullet points of authority */}

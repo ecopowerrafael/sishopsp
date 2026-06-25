@@ -1,0 +1,22 @@
+{
+  "short_name": "SisHOSP Portal",
+  "name": "SisHOSP Portal - Gestão de Clínicas de Reabilitação",
+  "description": "O SisHOSP é o software definitivo para gestão de clínicas multiprofissionais de reabilitação, centros de Autismo (método ABA), APAEs e convênios.",
+  "icons": [
+    {
+      "src": "https://sishosp.com.br/wp-content/uploads/2025/03/cropped-logo-sishosp.webp",
+      "type": "image/webp",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://sishosp.com.br/wp-content/uploads/2025/03/cropped-logo-sishosp.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#dc2626",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -29,16 +29,16 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
   // 3. Total current leakage
   const totalMonthlyWaste = monthlyBillingLoss + monthlyMissedSessionLoss;
 
-  // 4. Savings with Sishosp
-  // - Sishosp reduces billing errors/glosas by 95%
+  // 4. Savings with SisHOSP
+  // - SisHOSP reduces billing errors/glosas by 95%
   const savedGlosas = monthlyBillingLoss * 0.95;
-  // - Sishosp reduces no-show vacancy rates by 75% via WhatsApp reminders + Fila de Espera matchmaking
+  // - SisHOSP reduces no-show vacancy rates by 75% via WhatsApp reminders + Fila de Espera matchmaking
   const savedNoShows = monthlyMissedSessionLoss * 0.75;
 
   const estimatedMonthlySavings = savedGlosas + savedNoShows;
   const estimatedYearlySavings = estimatedMonthlySavings * 12;
 
-  // 5. Admin hours saved (therapist spends 16 hours/month on paperwork, Sishosp saves 70% of it)
+  // 5. Admin hours saved (therapist spends 16 hours/month on paperwork, SisHOSP saves 70% of it)
   const monthlyHoursSavedPerPro = 16 * 0.70;
   const totalMonthlyHoursSaved = Math.round(professionals * monthlyHoursSavedPerPro);
 
@@ -47,7 +47,8 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL',
-      maximumFractionDigits: 0
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
     }).format(val);
   };
 
@@ -62,7 +63,7 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-teal-400 font-display font-bold text-xs uppercase tracking-widest bg-teal-500/10 px-3.5 py-1.5 rounded-full border border-teal-500/20">
-            Simulador de Eficiência Sishosp
+            Simulador de Eficiência SisHOSP
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mt-4 mb-4">
             Quanto custa a ineficiência administrativa atual na sua clínica?

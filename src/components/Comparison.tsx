@@ -51,7 +51,7 @@ export default function Comparison({ onOpenDemo }: ComparisonProps) {
             Como sua clínica opera hoje vs. Como ela deve operar amanhã
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Compare o gargalo de processos manuais com o ganho de produtividade de uma rotina 100% otimizada pelo Sishosp Portal.
+            Compare o gargalo de processos manuais com o ganho de produtividade de uma rotina 100% otimizada pelo SisHOSP Portal.
           </p>
         </div>
 
@@ -64,11 +64,11 @@ export default function Comparison({ onOpenDemo }: ComparisonProps) {
             </div>
             <div className="md:col-span-4 p-4 bg-red-950/20 md:border-r border-slate-800 text-red-300 flex items-center justify-center gap-2">
               <X className="w-4 h-4" />
-              Sem Sishosp (Planilhas / Papel)
+              Sem SisHOSP (Planilhas / Papel)
             </div>
             <div className="md:col-span-4 p-4 bg-teal-950/20 text-teal-300 flex items-center justify-center gap-2">
               <Check className="w-4 h-4" />
-              Com Sishosp (Gestão Automatizada)
+              Com SisHOSP (Gestão Automatizada)
             </div>
           </div>
 
@@ -88,13 +88,13 @@ export default function Comparison({ onOpenDemo }: ComparisonProps) {
                   )}
                 </div>
 
-                {/* Without Sishosp Column */}
+                {/* Without SisHOSP Column */}
                 <div className="md:col-span-4 p-5 md:p-6 bg-red-50/10 md:border-r border-slate-100 text-slate-500 text-left leading-relaxed flex items-start gap-3">
                   <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                   <p>{item.without}</p>
                 </div>
 
-                {/* With Sishosp Column */}
+                {/* With SisHOSP Column */}
                 <div className="md:col-span-4 p-5 md:p-6 bg-teal-50/10 text-slate-700 text-left font-medium leading-relaxed flex items-start gap-3">
                   <Check className="w-5 h-5 text-teal-600 shrink-0 mt-0.5 animate-pulse" />
                   <p>{item.with}</p>
@@ -107,7 +107,7 @@ export default function Comparison({ onOpenDemo }: ComparisonProps) {
           {/* Table Footer CTA */}
           <div className="bg-slate-50 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100">
             <span className="text-xs text-slate-500 text-left font-medium">
-              *Pesquisa com clientes ativos demonstrou aumento de faturamento médio de <strong className="text-teal-600">18% no primeiro trimestre</strong> após implantação do Sishosp.
+              *Pesquisa com clientes ativos demonstrou aumento de faturamento médio de <strong className="text-teal-600">18% no primeiro trimestre</strong> após implantação do SisHOSP.
             </span>
             <button
               onClick={() => onOpenDemo()}

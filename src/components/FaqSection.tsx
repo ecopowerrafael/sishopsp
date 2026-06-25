@@ -11,14 +11,14 @@ export default function FaqSection() {
   const faqItems: FAQItem[] = [
     {
       id: 'faq-1',
-      question: 'O Sishosp exporta arquivos para o faturamento SUS?',
-      answer: 'Sim! O Sishosp possui um dos módulos de faturamento SUS mais robustos do mercado. Ele gera de forma 100% automatizada e validada os arquivos magnéticos de BPA-I (Boletim de Produção Ambulatorial Individualizado) e de APAC (Autorização de Procedimentos de Alta Complexidade), eliminando erros e digitação dupla.',
+      question: 'O SisHOSP exporta arquivos para o faturamento SUS?',
+      answer: 'Sim! O SisHOSP possui um dos módulos de faturamento SUS mais robustos do mercado. Ele gera de forma 100% automatizada e validada os arquivos magnéticos de BPA-I (Boletim de Produção Ambulatorial Individualizado) e de APAC (Autorização de Procedimentos de Alta Complexidade), eliminando erros e digitação dupla.',
       category: 'faturamento'
     },
     {
       id: 'faq-2',
       question: 'Como funciona o prontuário especializado em Autismo e método ABA?',
-      answer: 'O prontuário do Sishosp permite registrar objetivos terapêuticos detalhados, metas de reforço, comportamentos-barreira e evolução clínica. O sistema gera automaticamente os gráficos de curva de aprendizagem e evolução exigidos por planos de saúde e auditorias de forma científica, sem que o terapeuta gaste horas em planilhas.',
+      answer: 'O prontuário do SisHOSP permite registrar objetivos terapêuticos detalhados, metas de reforço, comportamentos-barreira e evolução clínica. O sistema gera automaticamente os gráficos de curva de aprendizagem e evolução exigidos por planos de saúde e auditorias de forma científica, sem que o terapeuta gaste horas in planilhas.',
       category: 'prontuario'
     },
     {
@@ -35,7 +35,7 @@ export default function FaqSection() {
     },
     {
       id: 'faq-5',
-      question: 'O Sishosp suporta faturamento de convênios particulares (TISS)?',
+      question: 'O SisHOSP suporta faturamento de convênios particulares (TISS)?',
       answer: 'Com certeza. O sistema está totalmente atualizado com os padrões de Guia de Consulta, SADT e Lote do padrão TISS da ANS. Ele gera os arquivos XML de cobrança validados e organiza o controle de glosas para que você identifique onde estão os gargalos financeiros com as operadoras.',
       category: 'faturamento'
     },
@@ -71,7 +71,7 @@ export default function FaqSection() {
             Esclareça suas dúvidas técnicas
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Selecione uma categoria ou pesquise pelo assunto que deseja entender sobre a operacionalidade do Sishosp Portal.
+            Selecione uma categoria ou pesquise pelo assunto que deseja entender sobre a operacionalidade do SisHOSP Portal.
           </p>
         </div>
 

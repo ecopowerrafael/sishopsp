@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square150x150logo src="https://sishosp.com.br/wp-content/uploads/2025/03/cropped-logo-sishosp.webp"/>
+      <TileColor>#dc2626</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>

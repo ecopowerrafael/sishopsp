@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://portal.sishosp.com.br/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://sishosp.com.br/wp-content/uploads/2025/03/cropped-logo-sishosp.webp</video:thumbnail_loc>
+      <video:title>Demonstração do Painel de Indicadores SisHOSP</video:title>
+      <video:description>Conheça as ferramentas e gráficos integrados do SisHOSP para gestão e faturamento SUS.</video:description>
+      <video:content_loc>https://portal.sishosp.com.br/videos/demo.mp4</video:content_loc>
+      <video:publication_date>2026-01-10T09:00:00Z</video:publication_date>
+    </video:video>
+  </url>
+</urlset>

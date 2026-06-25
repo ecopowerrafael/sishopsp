@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, ShieldCheck, PhoneCall } from 'lucide-react';
+import { useSeo } from '../seo/MetaTags';
 
 interface NavbarProps {
   onOpenDemo: (challenge?: string) => void;
 }
 
 export default function Navbar({ onOpenDemo }: NavbarProps) {
+  const { currentPath, setCurrentPath } = useSeo();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -26,6 +28,23 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
     { label: 'FAQ', href: '#faq' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    if (currentPath !== '/') {
+      // Navigate back to home first, then scroll
+      setCurrentPath('/');
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
@@ -38,23 +57,21 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo Brand */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-teal-600/20 group-hover:scale-105 transition-transform">
-              <span className="font-display font-black text-xl tracking-tight">S</span>
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-display font-bold text-lg tracking-tight text-slate-900 leading-none">
-                  sishosp
-                </span>
-                <span className="bg-teal-50 text-teal-700 px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase font-display leading-none">
-                  Portal
-                </span>
-              </div>
-              <span className="text-[10px] text-slate-500 font-medium tracking-wide">
-                Líder em Gestão de Reabilitação
-              </span>
-            </div>
+          <a 
+            href="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentPath('/');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center group"
+          >
+            <img
+              src="https://sishosp.com.br/wp-content/uploads/2025/03/cropped-logo-sishosp.webp"
+              alt="SisHOSP"
+              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
           </a>
 
           {/* Desktop Navigation Links */}
@@ -63,6 +80,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-sm font-semibold text-slate-600 hover:text-teal-600 transition-colors"
               >
                 {item.label}
@@ -122,7 +140,7 @@ export default function Navbar({ onOpenDemo }: NavbarProps) {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-base font-semibold text-slate-800 hover:text-teal-600 py-2 border-b border-slate-50 transition-colors"
               >
                 {item.label}

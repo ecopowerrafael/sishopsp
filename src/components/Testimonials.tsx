@@ -17,7 +17,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
       name: 'Maria Auxiliadora',
       role: 'Diretora Administrativa',
       institution: 'APAE de Maceió',
-      quote: 'Antes do Sishosp, o faturamento do SUS era um tormento que levava semanas, repleto de fichas de papel rasuradas e perdas constantes de APACs. Hoje, tudo é validado no ato do atendimento do assistido. Reduzimos as glosas do faturamento SUS a quase zero e eliminamos 98% dos impressos de papel na instituição.',
+      quote: 'Antes do SisHOSP, o faturamento do SUS era um tormento que levava semanas, repleto de fichas de papel rasuradas e perdas constantes de APACs. Hoje, tudo é validado no ato do atendimento do assistido. Reduzimos as glosas do faturamento SUS a quase zero e eliminamos 98% dos impressos de papel na instituição.',
       metrics: '-98% papel, Glosas Zeradas',
       category: 'apae'
     },
@@ -26,7 +26,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
       name: 'Dr. Thiago Albuquerque',
       role: 'Fundador e Diretor Clínico',
       institution: 'Clínica TEA e Autismo Crescer',
-      quote: 'Medir evolução de metas terapêuticas pelo método ABA em planilhas Excel era inviável para nossa escala. O prontuário especializado do Sishosp mudou nossa história: agora temos gráficos automáticos que mostram a evolução exata de cada criança de acordo com as diretrizes do DSM-5. Pais mais satisfeitos e faturamento ágil.',
+      quote: 'Medir evolução de metas terapêuticas pelo método ABA em planilhas Excel era inviável para nossa escala. O prontuário especializado do SisHOSP mudou nossa história: agora temos gráficos automáticos que mostram a evolução exata de cada criança de acordo com as diretrizes do DSM-5. Pais mais satisfeitos e faturamento ágil.',
       metrics: '+45% engajamento familiar',
       category: 'autism'
     },
@@ -35,7 +35,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
       name: 'Paula Vasconcelos',
       role: 'Coordenadora de Faturamento',
       institution: 'Centro Especializado em Reabilitação III (CER III)',
-      quote: 'Controlar as ausências de pacientes em reabilitação motora e de fala era um pescoço de garrafa. Com as confirmações automáticas por WhatsApp do Sishosp, reduzimos as faltas em 80% e habilitamos o preenchimento imediato pela lista de espera inteligente. Otimizamos 100% da ociosidade dos terapeutas.',
+      quote: 'Controlar as ausências de pacientes em reabilitação motora e de fala era um pescoço de garrafa. Com as confirmações automáticas por WhatsApp do SisHOSP, reduzimos as faltas em 80% e habilitamos o preenchimento imediato pela lista de espera inteligente. Otimizamos 100% da ociosidade dos terapeutas.',
       metrics: '-80% de Absenteísmo',
       category: 'rehabilitation'
     },
@@ -44,7 +44,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
       name: 'Roberto de Oliveira',
       role: 'Gerente Geral',
       institution: 'APAE Alagoas',
-      quote: 'A prestação de contas governamentais do convênio exige relatórios impecáveis. A transparência e integridade dos dados gerados pelo Sishosp nos trouxeram total tranquilidade com o Ministério Público e o Conselho Municipal de Saúde. Recomendo de olhos fechados.',
+      quote: 'A prestação de contas governamentais do convênio exige relatórios impecáveis. A transparência e integridade dos dados gerados pelo SisHOSP nos trouxeram total tranquilidade com o Ministério Público e o Conselho Municipal de Saúde. Recomendo de olhos fechados.',
       metrics: 'Prestação de contas 100% aprovada',
       category: 'apae'
     }
@@ -77,7 +77,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
             A escolha de quem lidera o setor de reabilitação no Brasil
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Mais de 800 instituições filantrópicas, APAEs, clínicas privadas e Centros de Reabilitação do SUS confiam no ecossistema Sishosp para otimizar suas rotinas diárias.
+            Mais de 800 instituições filantrópicas, APAEs, clínicas privadas e Centros de Reabilitação do SUS confiam no ecossistema SisHOSP para otimizar suas rotinas diárias.
           </p>
         </div>
 

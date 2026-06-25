@@ -101,7 +101,7 @@ export default function Solutions({ onOpenDemo }: SolutionsProps) {
             Um sistema cirurgicamente moldado para o seu perfil de atendimento
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Diferente de ERPs médicos genéricos, o Sishosp se adapta às exigências regulatórias do SUS e às metodologias clínicas mais avançadas do setor de reabilitação.
+            Diferente de ERPs médicos genéricos, o SisHOSP se adapta às exigências regulatórias do SUS e às metodologias clínicas mais avançadas do setor de reabilitação.
           </p>
         </div>
 

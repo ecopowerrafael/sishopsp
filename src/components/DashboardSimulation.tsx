@@ -10,14 +10,14 @@ interface DashboardSimulationProps {
 export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationProps) {
   const [activeTab, setActiveTab] = useState<'billing' | 'attendance' | 'waiting'>('billing');
 
-  // Realistic data showcasing transitions from Manual/Other Systems to Sishosp (deployed in Month 4)
+  // Realistic data showcasing transitions from Manual/Other Systems to SisHOSP (deployed in Month 4)
   const billingData = [
-    { name: 'Jan (Sem Sishosp)', glosas: 8.5, faturamento: 125000 },
-    { name: 'Fev (Sem Sishosp)', glosas: 9.2, faturamento: 118000 },
-    { name: 'Mar (Sem Sishosp)', glosas: 7.8, faturamento: 132000 },
-    { name: 'Abr (Sishosp Implat.)', glosas: 3.5, faturamento: 145000 },
-    { name: 'Mai (Com Sishosp)', glosas: 1.1, faturamento: 156000 },
-    { name: 'Jun (Com Sishosp)', glosas: 0.4, faturamento: 162000 },
+    { name: 'Jan (Sem SisHOSP)', glosas: 8.5, faturamento: 125000 },
+    { name: 'Fev (Sem SisHOSP)', glosas: 9.2, faturamento: 118000 },
+    { name: 'Mar (Sem SisHOSP)', glosas: 7.8, faturamento: 132000 },
+    { name: 'Abr (SisHOSP Implat.)', glosas: 3.5, faturamento: 145000 },
+    { name: 'Mai (Com SisHOSP)', glosas: 1.1, faturamento: 156000 },
+    { name: 'Jun (Com SisHOSP)', glosas: 0.4, faturamento: 162000 },
   ];
 
   const attendanceData = [
@@ -42,7 +42,7 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-teal-600 font-display font-bold text-xs uppercase tracking-widest bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-100/50">
-            O Sishosp em Ação
+            O SisHOSP em Ação
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 tracking-tight mt-4 mb-4">
             Gestão visual baseada em dados reais de atendimento
@@ -63,7 +63,7 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
               </div>
               <div className="text-left">
                 <h3 className="text-sm font-bold text-white font-display flex items-center gap-2">
-                  Painel de Indicadores Sishosp
+                  Painel de Indicadores SisHOSP
                   <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[9px] px-2 py-0.5 rounded uppercase tracking-wider font-sans font-bold">
                     Demo ao Vivo
                   </span>
@@ -128,7 +128,7 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
                       Queda de Glosas para menos de 0.5%
                     </h4>
                     <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
-                      Com validações automáticas de inconsistência de dados do paciente no ato da digitação, o Sishosp impede o faturamento de APACs ou guias TISS inválidas, resultando em recebimento garantido.
+                      Com validações automáticas de inconsistência de dados do paciente no ato da digitação, o SisHOSP impede o faturamento de APACs ou guias TISS inválidas, resultando em recebimento garantido.
                     </p>
 
                     <div className="space-y-3">
@@ -190,7 +190,7 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
                       Faltas reduzidas em até 80%
                     </h4>
                     <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
-                      Ao acionar lembretes de consultas automáticos via WhatsApp e permitir cancelamentos rápidos, o Sishosp reordena instantaneamente as vagas ociosas para pacientes da Fila de Espera.
+                      Ao acionar lembretes de consultas automáticos via WhatsApp e permitir cancelamentos rápidos, o SisHOSP reordena instantaneamente as vagas ociosas para pacientes da Fila de Espera.
                     </p>
 
                     <div className="space-y-3">
@@ -221,8 +221,8 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
                           <YAxis stroke="#94a3b8" fontSize={10} tickLine={false} label={{ value: 'Percentual de Faltas (%)', angle: -90, position: 'insideLeft', fontSize: 10, fill: '#64748b' }} />
                           <Tooltip formatter={(value) => [`${value}%`, 'Faltas']} />
                           <Legend wrapperStyle={{ fontSize: 10 }} />
-                          <Bar dataKey="semSishosp" fill="#94a3b8" radius={[4, 4, 0, 0]} name="Sem Sishosp (Média de Faltas)" />
-                          <Bar dataKey="comSishosp" fill="#0284c7" radius={[4, 4, 0, 0]} name="Com Sishosp (Média de Faltas)" />
+                          <Bar dataKey="semSishosp" fill="#94a3b8" radius={[4, 4, 0, 0]} name="Sem SisHOSP (Média de Faltas)" />
+                          <Bar dataKey="comSishosp" fill="#dc2626" radius={[4, 4, 0, 0]} name="Com SisHOSP (Média de Faltas)" />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
@@ -280,7 +280,7 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
                           <Tooltip formatter={(value) => [`${value} dias`, 'Tempo']} />
                           <Legend wrapperStyle={{ fontSize: 10 }} />
                           <Bar dataKey="diasSem" fill="#cbd5e1" radius={[0, 4, 4, 0]} name="Média de Espera (Antes)" />
-                          <Bar dataKey="diasCom" fill="#0284c7" radius={[0, 4, 4, 0]} name="Média de Espera (Com Sishosp)" />
+                          <Bar dataKey="diasCom" fill="#dc2626" radius={[0, 4, 4, 0]} name="Média de Espera (Com SisHOSP)" />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
