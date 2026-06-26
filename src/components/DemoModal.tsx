@@ -108,7 +108,7 @@ Seguem meus dados:
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-neutral-900/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-blue-950/70 backdrop-blur-sm"
             id="modal-backdrop"
           />
 
@@ -118,64 +118,64 @@ Seguem meus dados:
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row z-10 max-h-[90vh]"
+            className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl shadow-blue-950/40 overflow-hidden flex flex-col md:flex-row z-10 max-h-[90vh]"
             id="demo-modal-container"
           >
             {/* Left Side: Brand Authority & Benefits */}
-            <div className="md:w-5/12 bg-teal-950 p-6 md:p-8 text-white flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-teal-600/10 rounded-full blur-2xl -mr-20 -mt-20 pointer-events-none" />
+            <div className="md:w-5/12 bg-blue-950 p-6 md:p-8 text-white flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-2xl -mr-20 -mt-20 pointer-events-none" />
               
               <div>
                 <div className="flex items-center gap-2 mb-6">
-                  <span className="bg-teal-500 text-teal-950 px-2.5 py-1 rounded-md text-xs font-bold tracking-wider uppercase font-display">
+                  <span className="bg-blue-600 text-white px-2.5 py-1 rounded-md text-xs font-bold tracking-wider uppercase font-display">
                     SisHOSP Portal
                   </span>
-                  <span className="text-teal-300 text-xs font-medium">• Software Oficial</span>
+                  <span className="text-blue-300 text-xs font-medium">• Software Oficial</span>
                 </div>
                 
                 <h3 className="text-2xl font-display font-bold leading-snug mb-4">
                   Transforme a gestão de sua clínica hoje mesmo.
                 </h3>
                 
-                <p className="text-teal-100/90 text-sm mb-6 leading-relaxed">
+                <p className="text-blue-100/90 text-sm mb-6 leading-relaxed">
                   Junte-se a mais de 800 instituições em todo o Brasil que reduziram em até 95% suas glosas de faturamento e zeraram o retrabalho administrativo.
                 </p>
 
                 <div className="space-y-4">
                   <div className="flex gap-3 items-start">
-                    <div className="bg-teal-900 text-teal-400 p-1.5 rounded mt-0.5">
+                    <div className="bg-blue-900 text-blue-300 p-1.5 rounded mt-0.5">
                       <CheckCircle className="w-4 h-4" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">Demonstração Personalizada</p>
-                      <p className="text-xs text-teal-200">Apresentação focada na realidade da sua instituição (SUS ou Convênios).</p>
+                      <p className="text-xs text-blue-200">Apresentação focada na realidade da sua instituição (SUS ou Convênios).</p>
                     </div>
                   </div>
 
                   <div className="flex gap-3 items-start">
-                    <div className="bg-teal-900 text-teal-400 p-1.5 rounded mt-0.5">
+                    <div className="bg-blue-900 text-blue-300 p-1.5 rounded mt-0.5">
                       <ShieldCheck className="w-4 h-4" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">100% Conforme Legislação</p>
-                      <p className="text-xs text-teal-200">Adequação total à LGPD e regras vigentes do Ministério da Saúde.</p>
+                      <p className="text-xs text-blue-200">Adequação total à LGPD e regras vigentes do Ministério da Saúde.</p>
                     </div>
                   </div>
 
                   <div className="flex gap-3 items-start">
-                    <div className="bg-teal-900 text-teal-400 p-1.5 rounded mt-0.5">
+                    <div className="bg-blue-900 text-blue-300 p-1.5 rounded mt-0.5">
                       <Award className="w-4 h-4" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">Implantação Acompanhada</p>
-                      <p className="text-xs text-teal-200">Suporte humanizado e treinamento completo para todo o seu time.</p>
+                      <p className="text-xs text-blue-200">Suporte humanizado e treinamento completo para todo o seu time.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-teal-900 text-xs text-teal-300/80 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-teal-400 shrink-0" />
+              <div className="mt-8 pt-6 border-t border-blue-900 text-xs text-blue-300/80 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>Garantimos total confidencialidade dos seus dados de acordo com a LGPD.</span>
               </div>
             </div>

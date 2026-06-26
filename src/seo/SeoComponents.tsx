@@ -32,7 +32,7 @@ interface HeroSeoProps {
 
 export const HeroSEO: React.FC<HeroSeoProps> = ({ data, onOpenDemo }) => {
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-white pt-24 pb-16 sm:pt-32 sm:pb-24">
+    <section className="relative overflow-hidden bg-blue-950 text-white pt-24 pb-16 sm:pt-32 sm:pb-24">
       {/* Decorative vector background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(13,148,136,0.15),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(220,38,38,0.1),transparent_50%)]" />
@@ -67,7 +67,7 @@ export const HeroSEO: React.FC<HeroSeoProps> = ({ data, onOpenDemo }) => {
 
               <button
                 onClick={onOpenDemo}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-white font-semibold text-sm transition-all duration-150 cursor-pointer"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-850 border border-blue-800 hover:border-blue-700 text-white font-semibold text-sm transition-all duration-150 cursor-pointer"
               >
                 <span>Falar com Especialista</span>
                 <ChevronRight className="w-4 h-4 ml-1" />
@@ -95,8 +95,8 @@ export const HeroSEO: React.FC<HeroSeoProps> = ({ data, onOpenDemo }) => {
           {/* Graphical Mockup / Decorative Card */}
           <div className="lg:col-span-5 relative">
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-teal-500 to-red-500 opacity-20 blur-xl" />
-            <div className="relative rounded-2xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 backdrop-blur-md">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800/80 mb-6">
+            <div className="relative rounded-2xl bg-blue-900/80 border border-blue-800 p-6 sm:p-8 backdrop-blur-md">
+              <div className="flex items-center justify-between pb-4 border-b border-blue-800/80 mb-6">
                 <div className="flex gap-1.5">
                   <span className="w-3 h-3 rounded-full bg-red-500" />
                   <span className="w-3 h-3 rounded-full bg-yellow-500" />
@@ -106,7 +106,7 @@ export const HeroSEO: React.FC<HeroSeoProps> = ({ data, onOpenDemo }) => {
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-3.5 rounded-xl bg-slate-950 border border-slate-800">
+                <div className="flex items-center justify-between p-3.5 rounded-xl bg-blue-950 border border-blue-800">
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-teal-500/10 text-teal-400">
                       <TrendingUp className="w-4 h-4" />
@@ -119,7 +119,7 @@ export const HeroSEO: React.FC<HeroSeoProps> = ({ data, onOpenDemo }) => {
                   <span className="text-xs font-mono text-teal-400 font-bold bg-teal-400/10 px-2 py-0.5 rounded">+45%</span>
                 </div>
 
-                <div className="flex items-center justify-between p-3.5 rounded-xl bg-slate-950 border border-slate-800">
+                <div className="flex items-center justify-between p-3.5 rounded-xl bg-blue-950 border border-blue-800">
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-red-500/10 text-red-400">
                       <Lock className="w-4 h-4" />
@@ -132,7 +132,7 @@ export const HeroSEO: React.FC<HeroSeoProps> = ({ data, onOpenDemo }) => {
                   <span className="text-xs font-mono text-red-400 font-bold bg-red-400/10 px-2 py-0.5 rounded">Ativo</span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-800/50 text-left space-y-1">
+                <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-800/50 text-left space-y-1">
                   <p className="text-xs text-slate-500">Prontuário Multidisciplinar:</p>
                   <p className="text-xs text-slate-300 italic">"Histórico clínico integrado que atende 100% aos requisitos de auditorias de planos de saúde e portarias do SUS."</p>
                 </div>
@@ -353,7 +353,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ data, onOp
           {/* Dynamic Result Card */}
           <div className="lg:col-span-6 relative">
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-teal-500 to-red-600 opacity-20 blur-xl" />
-            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 p-8 text-center text-white space-y-6">
+            <div className="relative rounded-2xl bg-blue-900 border border-blue-800 p-8 text-center text-white space-y-6">
               
               <div className="inline-flex p-3 rounded-full bg-teal-500/10 text-teal-400">
                 <TrendingUp className="w-8 h-8" />
@@ -378,7 +378,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ data, onOp
                 </button>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-slate-400 text-xs text-left leading-relaxed">
+              <div className="p-4 rounded-xl bg-blue-950/60 border border-blue-800 text-slate-400 text-xs text-left leading-relaxed">
                 * Os cálculos utilizam coeficientes médios validados em auditorias operacionais reais de mais de 800 hospitais e clínicas brasileiras usuárias do SisHOSP. Os valores finais podem variar conforme a complexidade regulatória do seu estado.
               </div>
 
@@ -420,11 +420,11 @@ export const ComparisonTable: React.FC = () => {
 
         <div className="overflow-x-auto rounded-2xl border border-slate-100 shadow-xl">
           <table className="w-full border-collapse text-left text-sm text-slate-500">
-            <thead className="bg-slate-950 text-white">
+            <thead className="bg-blue-950 text-white">
               <tr>
                 <th scope="col" className="px-6 py-4 font-bold text-xs uppercase tracking-wider">Recurso / Operacional</th>
                 <th scope="col" className="px-6 py-4 font-bold text-xs uppercase tracking-wider text-red-400">Processo Tradicional (Manual / Planilhas)</th>
-                <th scope="col" className="px-6 py-4 font-bold text-xs uppercase tracking-wider text-teal-400 bg-slate-900">Plataforma SisHOSP</th>
+                <th scope="col" className="px-6 py-4 font-bold text-xs uppercase tracking-wider text-teal-400 bg-blue-900">Plataforma SisHOSP</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -568,7 +568,7 @@ interface CallToActionProps {
 
 export const CallToAction: React.FC<CallToActionProps> = ({ onOpenDemo }) => {
   return (
-    <section className="py-20 bg-gradient-to-r from-slate-950 to-slate-900 text-white relative overflow-hidden text-center">
+    <section className="py-20 bg-gradient-to-r from-blue-950 to-blue-900 text-white relative overflow-hidden text-center">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(13,148,136,0.15),transparent_60%)]" />
       
       <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-6">
@@ -594,7 +594,7 @@ export const CallToAction: React.FC<CallToActionProps> = ({ onOpenDemo }) => {
           
           <button
             onClick={onOpenDemo}
-            className="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 text-white font-semibold text-sm sm:text-base transition-all duration-150 cursor-pointer"
+            className="px-8 py-4 rounded-xl bg-blue-900 hover:bg-blue-850 border border-blue-800 hover:border-blue-700 text-white font-semibold text-sm sm:text-base transition-all duration-150 cursor-pointer"
           >
             Ver Planos & Valores
           </button>

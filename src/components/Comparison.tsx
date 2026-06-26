@@ -58,15 +58,15 @@ export default function Comparison({ onOpenDemo }: ComparisonProps) {
         {/* Comparison Table Grid */}
         <div className="max-w-5xl mx-auto border border-slate-200/60 rounded-3xl overflow-hidden shadow-lg" id="comparison-table-wrapper">
           {/* Table Header Row */}
-          <div className="grid grid-cols-1 md:grid-cols-12 bg-slate-900 text-white font-display font-bold text-sm text-center">
-            <div className="md:col-span-4 p-4 md:border-r border-slate-800 flex items-center justify-center md:justify-start pl-6 text-slate-300">
+          <div className="grid grid-cols-1 md:grid-cols-12 bg-blue-900 text-white font-display font-bold text-sm text-center">
+            <div className="md:col-span-4 p-4 md:border-r border-blue-800 flex items-center justify-center md:justify-start pl-6 text-slate-300">
               Processo / Área
             </div>
-            <div className="md:col-span-4 p-4 bg-red-950/20 md:border-r border-slate-800 text-red-300 flex items-center justify-center gap-2">
+            <div className="md:col-span-4 p-4 bg-red-950/20 md:border-r border-blue-800 text-red-300 flex items-center justify-center gap-2">
               <X className="w-4 h-4" />
               Sem SisHOSP (Planilhas / Papel)
             </div>
-            <div className="md:col-span-4 p-4 bg-teal-950/20 text-teal-300 flex items-center justify-center gap-2">
+            <div className="md:col-span-4 p-4 bg-blue-950/30 text-teal-300 flex items-center justify-center gap-2">
               <Check className="w-4 h-4" />
               Com SisHOSP (Gestão Automatizada)
             </div>

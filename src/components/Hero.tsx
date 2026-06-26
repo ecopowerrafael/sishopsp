@@ -137,17 +137,17 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               <div className="absolute inset-0 bg-teal-600/5 rounded-3xl blur-3xl -z-10" />
 
               {/* Mockup Frame (Macbook/Tablet style representation) */}
-              <div className="bg-slate-900 rounded-2xl p-2.5 shadow-2xl border border-slate-800">
-                <div className="bg-slate-950 rounded-xl overflow-hidden border border-slate-900 relative">
+              <div className="bg-blue-900 rounded-2xl p-2.5 shadow-2xl shadow-blue-950/50 border border-blue-800">
+                <div className="bg-blue-950 rounded-xl overflow-hidden border border-blue-900 relative">
                   
                   {/* Top bar simulating clinical application header */}
-                  <div className="bg-slate-900 px-4 py-2.5 flex items-center justify-between border-b border-slate-800">
+                  <div className="bg-blue-900 px-4 py-2.5 flex items-center justify-between border-b border-blue-800">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                       <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
                       <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                     </div>
-                    <div className="bg-slate-950 px-3 py-0.5 rounded text-[10px] text-slate-400 font-mono tracking-wider flex items-center gap-1 border border-slate-800">
+                    <div className="bg-blue-950 px-3 py-0.5 rounded text-[10px] text-slate-400 font-mono tracking-wider flex items-center gap-1 border border-blue-800">
                       <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
                       sishosp-cloud.com.br/clinica-central
                     </div>
@@ -155,9 +155,9 @@ export default function Hero({ onOpenDemo }: HeroProps) {
                   </div>
 
                   {/* Simulated App Client UI */}
-                  <div className="bg-slate-950 p-4 min-h-[340px] text-slate-300">
+                  <div className="bg-blue-950 p-4 min-h-[340px] text-slate-300">
                     {/* Header bar */}
-                    <div className="flex justify-between items-center mb-4 pb-3 border-b border-slate-800">
+                    <div className="flex justify-between items-center mb-4 pb-3 border-b border-blue-800">
                       <div>
                         <span className="text-[9px] font-bold text-teal-400 tracking-wider uppercase">PACIENTE EM ATENDIMENTO</span>
                         <h4 className="text-sm font-bold text-white font-display">Enzo Gabriel Santos (6 anos)</h4>
@@ -169,14 +169,14 @@ export default function Hero({ onOpenDemo }: HeroProps) {
 
                     {/* Quick KPIs Grid */}
                     <div className="grid grid-cols-2 gap-2.5 mb-4">
-                      <div className="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80">
+                      <div className="bg-blue-900/60 p-2.5 rounded-lg border border-blue-800/80">
                         <span className="text-[9px] text-slate-400 uppercase font-medium">Presença Confirmada</span>
                         <div className="text-xs font-bold text-white flex items-center gap-1.5 mt-0.5">
                           <span className="w-2 h-2 rounded-full bg-emerald-500" />
                           Assinatura Biométrica
                         </div>
                       </div>
-                      <div className="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80">
+                      <div className="bg-blue-900/60 p-2.5 rounded-lg border border-blue-800/80">
                         <span className="text-[9px] text-slate-400 uppercase font-medium">Evolução do Dia</span>
                         <div className="text-xs font-bold text-white flex items-center gap-1.5 mt-0.5">
                           <TrendingUp className="w-3.5 h-3.5 text-teal-400" />
@@ -186,13 +186,13 @@ export default function Hero({ onOpenDemo }: HeroProps) {
                     </div>
 
                     {/* Interactive Therapy Progress Area */}
-                    <div className="bg-slate-900/40 p-3 rounded-lg border border-slate-800 mb-4">
+                    <div className="bg-blue-900/40 p-3 rounded-lg border border-blue-800 mb-4">
                       <div className="flex justify-between text-[10px] text-slate-400 mb-2">
                         <span className="font-semibold text-slate-300">Atividade: Coordenação & Foco (DSM-5)</span>
                         <span className="text-teal-400 font-bold">Meta: 4/5 Acertos</span>
                       </div>
                       <div className="space-y-1.5">
-                        <div className="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                        <div className="h-2 w-full bg-blue-900 rounded-full overflow-hidden">
                           <div className="h-full bg-teal-500 rounded-full w-[80%]" />
                         </div>
                         <p className="text-[10px] text-slate-400 italic">"Paciente demonstrou excelente engajamento nas atividades táteis de pinça. Evolução constante."</p>
@@ -212,7 +212,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
                   </div>
 
                   {/* Dark Mode Overlay Stats overlay for landing page */}
-                  <div className="bg-slate-900 px-4 py-3 flex items-center justify-between border-t border-slate-800 text-xs">
+                  <div className="bg-blue-900 px-4 py-3 flex items-center justify-between border-t border-blue-800 text-xs">
                     <span className="text-slate-400">Suporte: <strong>0800 591 2341</strong></span>
                     <span className="text-emerald-400 flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />

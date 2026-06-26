@@ -272,25 +272,25 @@ export default function ActiveClients() {
       </div>
 
       {/* Sleek Infinite Moving Logo Marquee Track */}
-      <div className="relative w-full flex items-center justify-center py-5 bg-white/60 border-y border-slate-100/70 select-none">
+      <div className="relative w-full flex items-center justify-center py-6 bg-white/60 border-y border-slate-100/70 select-none">
         
         {/* Transparent Mask Overlays for premium fading edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
         <div className="w-full overflow-hidden">
           <div className="animate-marquee gap-6 md:gap-10 flex flex-row items-center px-4" key={activeTab}>
             {currentLogos.map((item, idx) => (
               <div 
                 key={`${item.url}-${idx}`} 
-                className="flex flex-col items-center justify-center shrink-0 h-16 w-32 sm:w-40 px-3 bg-white border border-slate-100 rounded-xl hover:border-teal-500/30 hover:scale-105 transition-all duration-300 group cursor-pointer relative"
+                className="flex flex-col items-center justify-center shrink-0 h-24 w-40 sm:w-48 px-4 py-3 bg-white border border-slate-100 rounded-2xl hover:border-teal-500/30 hover:shadow-lg hover:shadow-teal-500/5 hover:scale-105 transition-all duration-300 group cursor-pointer relative"
                 title={item.name}
               >
-                <div className="h-10 w-full flex items-center justify-center">
+                <div className="h-14 w-full flex items-center justify-center">
                   <img 
                     src={item.url} 
                     alt={item.name}
-                    className="max-h-9 max-w-full object-contain filter group-hover:scale-105 transition-all duration-300"
+                    className="max-h-12 sm:max-h-14 max-w-full object-contain filter group-hover:scale-105 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       // Failover if logo does not render correctly
@@ -298,14 +298,14 @@ export default function ActiveClients() {
                       const parent = (e.target as HTMLElement).parentElement;
                       if (parent) {
                         const textNode = document.createElement('span');
-                        textNode.className = 'text-[9px] font-bold text-slate-500 text-center tracking-tight line-clamp-2 uppercase px-1 leading-none';
+                        textNode.className = 'text-[10px] font-bold text-slate-500 text-center tracking-tight line-clamp-2 uppercase px-1 leading-none';
                         textNode.innerText = item.name;
                         parent.appendChild(textNode);
                       }
                     }}
                   />
                 </div>
-                <span className="text-[8px] text-slate-400 group-hover:text-teal-600 font-bold transition-colors truncate w-full mt-1.5 px-1 leading-none text-center">
+                <span className="text-[9px] text-slate-500 group-hover:text-teal-600 font-bold transition-colors truncate w-full mt-2 px-1 leading-none text-center">
                   {item.name}
                 </span>
               </div>

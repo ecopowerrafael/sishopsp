@@ -210,12 +210,12 @@ function AppContent() {
             <FaqSection />
 
             {/* Bottom High-Conversion Lead Capture Form (Inline) */}
-            <section className="py-20 bg-teal-950 text-white relative overflow-hidden" id="bottom-conversion-form">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-teal-600/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
+            <section className="py-20 bg-blue-950 text-white relative overflow-hidden" id="bottom-conversion-form">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none" />
               
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div className="bg-slate-900 rounded-3xl border border-teal-500/10 overflow-hidden shadow-2xl p-8 sm:p-12 lg:p-16 max-w-5xl mx-auto">
+                <div className="bg-blue-900 rounded-3xl border border-blue-500/20 overflow-hidden shadow-2xl shadow-blue-950/40 p-8 sm:p-12 lg:p-16 max-w-5xl mx-auto">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
                     {/* Left Side: Brand Authority Pitch */}
@@ -350,7 +350,7 @@ function AppContent() {
       </main>
 
       {/* Structured Footer */}
-      <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-left" id="portal-footer">
+      <footer className="bg-blue-950 text-blue-200/90 py-12 border-t border-blue-900 text-left shadow-2xl shadow-blue-950/50" id="portal-footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             
@@ -404,12 +404,12 @@ function AppContent() {
             <div>
               <h4 className="text-white font-display font-bold text-xs uppercase tracking-wider mb-4">Conformidade Legal</h4>
               <div className="space-y-2">
-                <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-[10px] text-slate-400 leading-normal">
-                  <p className="font-semibold text-slate-300">100% Conforme LGPD</p>
+                <div className="bg-blue-900 border border-blue-850 p-2.5 rounded-lg text-[10px] text-blue-200 leading-normal">
+                  <p className="font-semibold text-blue-100">100% Conforme LGPD</p>
                   <p>Banco de dados protegido na AWS com criptografia de ponta a ponta.</p>
                 </div>
-                <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-[10px] text-slate-400 leading-normal">
-                  <p className="font-semibold text-slate-300">Resoluções CFM e ANS</p>
+                <div className="bg-blue-900 border border-blue-850 p-2.5 rounded-lg text-[10px] text-blue-200 leading-normal">
+                  <p className="font-semibold text-blue-100">Resoluções CFM e ANS</p>
                   <p>Prontuário multiprofissional com assinatura eletrônica legalizada.</p>
                 </div>
               </div>
@@ -418,7 +418,7 @@ function AppContent() {
           </div>
 
           {/* SEO Commercial Landing Pages Directory */}
-          <div className="pt-8 mt-8 border-t border-slate-900">
+          <div className="pt-8 mt-8 border-t border-blue-900">
             <h4 className="text-white font-display font-bold text-xs uppercase tracking-wider mb-6">
               Diretório de Soluções Geriátricas, Clínicas e Hospitalares (SEO Hub)
             </h4>

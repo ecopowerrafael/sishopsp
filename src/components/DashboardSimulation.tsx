@@ -56,7 +56,7 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden max-w-5xl mx-auto" id="dashboard-frame-container">
           
           {/* Header of Simulated Workspace */}
-          <div className="bg-slate-900 px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800">
+          <div className="bg-blue-900 px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-blue-800">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 bg-teal-500 rounded-xl flex items-center justify-center text-white">
                 <LayoutDashboard className="w-5 h-5" />
@@ -292,7 +292,7 @@ export default function DashboardSimulation({ onOpenDemo }: DashboardSimulationP
           </div>
 
           {/* Bottom Call to Action Frame */}
-          <div className="bg-slate-900 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-800">
+          <div className="bg-blue-900 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-blue-800">
             <div className="flex items-center gap-2 text-left">
               <Database className="w-5 h-5 text-teal-400 shrink-0" />
               <span className="text-xs text-slate-300">Quer migrar seus dados de outro sistema sem dores de cabeça? Fazemos toda a carga!</span>

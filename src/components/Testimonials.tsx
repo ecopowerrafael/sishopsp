@@ -86,7 +86,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
           <button
             onClick={() => { setActiveCategory('all'); setCurrentIndex(0); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-              activeCategory === 'all' ? 'bg-slate-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
+              activeCategory === 'all' ? 'bg-blue-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
             }`}
           >
             Todos os Casos
@@ -94,7 +94,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
           <button
             onClick={() => { setActiveCategory('apae'); setCurrentIndex(0); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-              activeCategory === 'apae' ? 'bg-slate-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
+              activeCategory === 'apae' ? 'bg-blue-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
             }`}
           >
             APAEs
@@ -102,7 +102,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
           <button
             onClick={() => { setActiveCategory('autism'); setCurrentIndex(0); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-              activeCategory === 'autism' ? 'bg-slate-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
+              activeCategory === 'autism' ? 'bg-blue-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
             }`}
           >
             Clínicas de Autismo
@@ -110,7 +110,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
           <button
             onClick={() => { setActiveCategory('rehabilitation'); setCurrentIndex(0); }}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-              activeCategory === 'rehabilitation' ? 'bg-slate-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
+              activeCategory === 'rehabilitation' ? 'bg-blue-900 text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100'
             }`}
           >
             Centros de Reabilitação
@@ -167,7 +167,7 @@ export default function Testimonials({ onOpenDemo }: TestimonialsProps) {
           </div>
 
           {/* Sidebar: Logos / trust stats */}
-          <div className="lg:col-span-4 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between text-left">
+          <div className="lg:col-span-4 bg-blue-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between text-left">
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <Award className="w-5 h-5 text-teal-400" />

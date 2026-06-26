@@ -53,7 +53,7 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
   };
 
   return (
-    <section className="py-20 bg-slate-900 text-white relative overflow-hidden" id="calculadora">
+    <section className="py-20 bg-blue-900 text-white relative overflow-hidden" id="calculadora">
       {/* Background patterns */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none" />
@@ -77,7 +77,7 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
           {/* Sliders Configuration */}
-          <div className="lg:col-span-6 bg-slate-950/60 p-6 sm:p-8 rounded-3xl border border-slate-800/80 flex flex-col justify-between">
+          <div className="lg:col-span-6 bg-blue-950/60 p-6 sm:p-8 rounded-3xl border border-blue-800/80 flex flex-col justify-between">
             <h3 className="text-lg font-display font-bold mb-6 text-teal-400 flex items-center gap-2">
               <Sparkles className="w-5 h-5" />
               Ajuste as métricas da sua clínica
@@ -166,8 +166,8 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
           <div className="lg:col-span-6 flex flex-col justify-between gap-6">
             
             {/* Primary Saving Metric */}
-            <div className="bg-gradient-to-br from-teal-950 to-slate-950 p-6 sm:p-8 rounded-3xl border border-teal-500/20 shadow-xl relative overflow-hidden flex-1 flex flex-col justify-between">
-              <div className="absolute top-0 right-0 bg-teal-500/10 text-teal-300 text-xs font-bold font-display px-3 py-1 rounded-bl-xl border-l border-b border-teal-500/20">
+            <div className="bg-gradient-to-br from-blue-950 to-blue-900 p-6 sm:p-8 rounded-3xl border border-blue-500/30 shadow-2xl shadow-blue-950/60 relative overflow-hidden flex-1 flex flex-col justify-between">
+              <div className="absolute top-0 right-0 bg-blue-500/20 text-blue-300 text-xs font-bold font-display px-3 py-1 rounded-bl-xl border-l border-b border-blue-500/30">
                 PROJEÇÃO DE RETORNO ANUAL
               </div>
               
@@ -181,7 +181,7 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-800">
+              <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-blue-800/80">
                 <div>
                   <span className="text-[10px] text-slate-400 uppercase font-medium">Economia Mensal</span>
                   <p className="text-lg font-bold text-teal-400 font-display">{formatCurrency(estimatedMonthlySavings)}/mês</p>
@@ -194,7 +194,7 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
             </div>
 
             {/* Hours Saved Metric */}
-            <div className="bg-slate-950/40 p-6 rounded-2xl border border-slate-800/80 flex items-center gap-4">
+            <div className="bg-blue-950/40 p-6 rounded-2xl border border-blue-800/80 flex items-center gap-4">
               <div className="w-12 h-12 bg-teal-500/10 text-teal-400 rounded-xl flex items-center justify-center shrink-0 border border-teal-500/20">
                 <Clock className="w-6 h-6" />
               </div>
@@ -210,7 +210,7 @@ export default function RoiCalculator({ onOpenDemo }: RoiCalculatorProps) {
             </div>
 
             {/* Conversion Trigger */}
-            <div className="bg-slate-950/60 p-6 rounded-2xl border border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="bg-blue-950/60 p-6 rounded-2xl border border-blue-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-left">
                 <h4 className="text-sm font-bold text-white font-display">Quer ver a simulação no seu faturamento real?</h4>
                 <p className="text-[11px] text-slate-400">Nossa equipe prepara um estudo detalhado para sua instituição.</p>
