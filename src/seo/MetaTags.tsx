@@ -194,7 +194,7 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
 
     // 10. Analytical / Tracking Pixel Integrations (Pre-setup infrastructure)
     // Setup verification meta tags
-    setMetaTag('name', 'google-site-verification', 'rfZvAg7f15jWEsa6SeC0bCr3ZN0n7BHwozwresmq0JI');
+    setMetaTag('name', 'google-site-verification', 'google5a1229c6b9bea713');
 
     // Initialize Google Tag Manager if ID provided (Stub for production activation)
     const gtmId = 'GTM-SISHOSP-MOCK';
